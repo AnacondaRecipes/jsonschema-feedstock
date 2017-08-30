@@ -24,6 +24,7 @@ requirements:
     - vcversioner
   run:
     - python
+    - setuptools
     - functools32  # [py27]
 
 test:
