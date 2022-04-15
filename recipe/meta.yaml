@@ -36,6 +36,8 @@ test:
     - jsonschema
   requires:
     - pip
+    # For testing downstream package cubes
+    - setuptools
   commands:
     - python -m pip check
     - jsonschema --version
