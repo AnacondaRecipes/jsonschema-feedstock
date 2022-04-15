@@ -36,20 +36,10 @@ test:
     - jsonschema
   requires:
     - pip
-    # For testing downstream package cubes
-    - setuptools
   commands:
     - python -m pip check
     - jsonschema --version
     - jsonschema --help
-  downstreams:
-    - airflow
-    - cfn-lint
-    - cubes
-    - jupyterlab_server
-    - jupyter_telemetry
-    - nbformat
-    - spyder
 
 about:
   home: https://github.com/Julian/jsonschema
