@@ -1,4 +1,4 @@
-{% set version = "4.4.0" %}
+{% set version = "4.9.1" %}
 
 package:
   name: jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: 636694eb41b3535ed608fe04129f26542b59ed99808b4f688aa32dcf55317a83
+  sha256: 408c4c8ed0dede3b268f7a441784f74206380b04f93eb2d537c7befb3df3099f
 
 build:
   number: 0
@@ -18,17 +18,17 @@ build:
 requirements:
   host:
     - pip
-    - python
-    - setuptools >=40.6.0
+    - python >=3.7
+    - setuptools
     - setuptools_scm >=3.4
     - toml
     - wheel
   run:
-    - python
+    - python >=3.7
     - attrs >=17.4.0
     - importlib_metadata  # [py<38]
     - importlib_resources>=1.4.0  # [py<39]
-    - pyrsistent >=0.14.0,!=0.17.0,!=0.17.1,!=0.17.2
+    - pyrsistent !=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
     - typing_extensions  # [py<38]
 
 test:
@@ -37,7 +37,7 @@ test:
   requires:
     - pip
   commands:
-    - python -m pip check
+    - pip check
     - jsonschema --version
     - jsonschema --help
 
@@ -50,10 +50,11 @@ about:
   description: |
     jsonschema is an implementation of JSON Schema for Python
   doc_url: https://python-jsonschema.readthedocs.org
-  doc_source_url: https://github.com/Julian/jsonschema/blob/v{{ version }}/docs/index.rst
-  dev_url: https://github.com/Julian/jsonschema
+  doc_source_url: https://github.com/python-jsonschema/jsonschema/blob/v4.9.1/docs/index.rst
+  dev_url: https://github.com/python-jsonschema/jsonschema
 
 extra:
+  feedstock-name: jsonschema
   recipe-maintainers:
     - minrk
     - ocefpaf
