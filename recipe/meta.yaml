@@ -42,6 +42,7 @@ test:
     - jsonschema --version
     - jsonschema --help
 
+
 about:
   home: https://github.com/Julian/jsonschema
   license: MIT
