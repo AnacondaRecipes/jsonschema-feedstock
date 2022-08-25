@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python
     - setuptools
     - setuptools_scm >=3.4
     - toml
@@ -26,7 +26,7 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.7
+    - python
     - attrs >=17.4.0
     - importlib_metadata  # [py<38]
     - importlib_resources>=1.4.0  # [py<39]
