@@ -24,6 +24,7 @@ requirements:
     - toml
     - wheel
     - hatchling
+    - hatch-vcs
   run:
     - python >=3.7
     - attrs >=17.4.0
