@@ -25,6 +25,7 @@ requirements:
     - wheel
     - hatchling
     - hatch-vcs
+    - pkgutil-resolve-name
   run:
     - python
     - attrs >=17.4.0
