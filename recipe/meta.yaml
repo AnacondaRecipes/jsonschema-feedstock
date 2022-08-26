@@ -1,4 +1,4 @@
-{% set version = "4.9.1" %}
+{% set version = "4.14.0" %}
 
 package:
   name: jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: 408c4c8ed0dede3b268f7a441784f74206380b04f93eb2d537c7befb3df3099f
+  sha256: 15062f4cc6f591400cd528d2c355f2cfa6a57e44c820dc783aee5e23d36a831f
 
 build:
   number: 0
@@ -17,23 +17,19 @@ build:
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
-    - setuptools_scm >=3.4
-    - toml
+    - pip
     - wheel
     - hatchling
     - hatch-vcs
-    - pkgutil-resolve-name
   run:
     - python
     - attrs >=17.4.0
+    - pyrsistent >=0.14.0,!=0.17.0,!=0.17.1,!=0.17.2
     - importlib_metadata  # [py<38]
-    - importlib_resources>=1.4.0  # [py<39]
-    - pyrsistent !=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
     - typing_extensions  # [py<38]
-
+    - importlib_resources >=1.4.0  # [py<39]
+    - pkgutil-resolve-name >=1.3.10  # [py<39]
 test:
   imports:
     - jsonschema
@@ -46,7 +42,7 @@ test:
 
 
 about:
-  home: https://github.com/Julian/jsonschema
+  home:  https://github.com/python-jsonschema/jsonschema
   license: MIT
   license_family: MIT
   license_file: COPYING
