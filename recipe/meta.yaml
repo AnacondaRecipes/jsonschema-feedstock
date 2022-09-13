@@ -12,7 +12,7 @@ build:
   number: 0
   skip: True  # [py<37]
   # script: {{ PYTHON }} -m pip install . --no-deps -vv
-  script: hatch build
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - jsonschema = jsonschema.cli:main
 
