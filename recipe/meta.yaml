@@ -12,19 +12,19 @@ build:
   number: 0
   skip: True  # [py<37]
   # script: {{ PYTHON }} -m pip install . --no-deps -vv
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: hatch build
   entry_points:
     - jsonschema = jsonschema.cli:main
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
     - wheel
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.7
+    - python
     - attrs >=17.4.0
     - pyrsistent >=0.14.0,!=0.17.0,!=0.17.1,!=0.17.2
     - importlib_metadata  # [py<38]
