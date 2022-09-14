@@ -1,4 +1,4 @@
-{% set version = "4.14.0" %}
+{% set version = "4.16.0" %}
 
 package:
   name: jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: 15062f4cc6f591400cd528d2c355f2cfa6a57e44c820dc783aee5e23d36a831f
+  sha256: 165059f076eff6971bae5b742fc029a7b4ef3f9bcf04c14e4776a7605de14b23
 
 build:
   number: 0
@@ -18,15 +18,15 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
     - wheel
     - hatchling
     - hatch-vcs
   run:
-    - python
+    - python >=3.7
     - attrs >=17.4.0
-    - pyrsistent >=0.14.0,!=0.17.0,!=0.17.1,!=0.17.2
+    - pyrsistent !=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
     - importlib_metadata  # [py<38]
     - typing_extensions  # [py<38]
     - importlib_resources >=1.4.0  # [py<39]
