@@ -20,7 +20,6 @@ requirements:
 outputs:
   - name: jsonschema
     build:
-      noarch: python
       script: {{ PYTHON }} -m pip install . --no-deps -vv
       entry_points:
         - jsonschema = jsonschema.cli:main
@@ -51,7 +50,6 @@ outputs:
 
   - name: jsonschema-with-format
     build:
-      noarch: python
     requirements:
       host:
         - python >=3.7
@@ -75,7 +73,6 @@ outputs:
 
   - name: jsonschema-with-format-nongpl
     build:
-      noarch: python
     requirements:
       host:
         - python >=3.7
@@ -99,7 +96,6 @@ outputs:
 
   - name: jsonschema-with-all
     build:
-      noarch: python
     requirements:
       host:
         - python >=3.7
