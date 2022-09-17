@@ -56,7 +56,7 @@ about:
   description: |
     jsonschema is an implementation of JSON Schema for Python
   doc_url: https://python-jsonschema.readthedocs.org
-  doc_source_url: https://github.com/python-jsonschema/jsonschema/blob/v4.9.1/docs/index.rst
+  doc_source_url: https://github.com/python-jsonschema/jsonschema/tree/main/docs
   dev_url: https://github.com/python-jsonschema/jsonschema
 
 extra:
