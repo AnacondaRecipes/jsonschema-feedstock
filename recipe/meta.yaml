@@ -1,4 +1,4 @@
-{% set version = "4.4.0" %}
+{% set version = "4.16.0" %}
 
 package:
   name: jsonschema
@@ -6,30 +6,35 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: 636694eb41b3535ed608fe04129f26542b59ed99808b4f688aa32dcf55317a83
-
+  sha256: 165059f076eff6971bae5b742fc029a7b4ef3f9bcf04c14e4776a7605de14b23
+  patches:
+    - patches/001-remove-fancy-pypi-readme.patch
 build:
   number: 0
   skip: True  # [py<37]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps
   entry_points:
     - jsonschema = jsonschema.cli:main
 
 requirements:
+  build:
+    - patch                # [unix]
+    - m2-patch             # [win]
+
   host:
-    - pip
     - python
-    - setuptools >=40.6.0
-    - setuptools_scm >=3.4
-    - toml
+    - pip
     - wheel
+    - hatchling
+    - hatch-vcs
   run:
     - python
     - attrs >=17.4.0
+    - pyrsistent !=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
     - importlib_metadata  # [py<38]
-    - importlib_resources>=1.4.0  # [py<39]
-    - pyrsistent >=0.14.0,!=0.17.0,!=0.17.1,!=0.17.2
     - typing_extensions  # [py<38]
+    - importlib_resources >=1.4.0  # [py<39]
+    - pkgutil-resolve-name >=1.3.10  # [py<39]
 
 test:
   imports:
@@ -37,12 +42,13 @@ test:
   requires:
     - pip
   commands:
-    - python -m pip check
+    - pip check
     - jsonschema --version
     - jsonschema --help
 
+
 about:
-  home: https://github.com/Julian/jsonschema
+  home:  https://github.com/python-jsonschema/jsonschema
   license: MIT
   license_family: MIT
   license_file: COPYING
@@ -50,10 +56,11 @@ about:
   description: |
     jsonschema is an implementation of JSON Schema for Python
   doc_url: https://python-jsonschema.readthedocs.org
-  doc_source_url: https://github.com/Julian/jsonschema/blob/v{{ version }}/docs/index.rst
-  dev_url: https://github.com/Julian/jsonschema
+  doc_source_url: https://github.com/python-jsonschema/jsonschema/tree/main/docs
+  dev_url: https://github.com/python-jsonschema/jsonschema
 
 extra:
+  feedstock-name: jsonschema
   recipe-maintainers:
     - minrk
     - ocefpaf
