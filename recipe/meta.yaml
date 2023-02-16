@@ -1,4 +1,4 @@
-{% set version = "4.16.0" %}
+{% set version = "4.17.3" %}
 
 package:
   name: jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: 165059f076eff6971bae5b742fc029a7b4ef3f9bcf04c14e4776a7605de14b23
+  sha256: 0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d
   patches:
     - patches/001-remove-fancy-pypi-readme.patch
 build:
