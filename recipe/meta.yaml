@@ -11,6 +11,7 @@ source:
     - patches/001-remove-fancy-pypi-readme.patch
 build:
   number: 0
+  # trigger 1
   skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps
   entry_points:
