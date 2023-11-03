@@ -1,5 +1,5 @@
 diff --git a/pyproject.toml b/pyproject.toml
-index f5fe8db..7ae8318 100644
+index 26d299a..0992da1 100644
 --- a/pyproject.toml
 +++ b/pyproject.toml
 @@ -1,5 +1,5 @@
@@ -9,7 +9,7 @@ index f5fe8db..7ae8318 100644
  build-backend = "hatchling.build"
  
  [tool.hatch.version]
-@@ -76,30 +76,6 @@ Tidelift = "https://tidelift.com/subscription/pkg/pypi-jsonschema?utm_source=pyp
+@@ -77,30 +77,6 @@ Tidelift = "https://tidelift.com/subscription/pkg/pypi-jsonschema?utm_source=pyp
  Changelog = "https://github.com/python-jsonschema/jsonschema/blob/main/CHANGELOG.rst"
  Source = "https://github.com/python-jsonschema/jsonschema"
  
@@ -37,6 +37,6 @@ index f5fe8db..7ae8318 100644
 -path = "CHANGELOG.rst"
 -pattern = "(^v.+?)\nv"
 -
- [tool.isort]
- from_first = true
- include_trailing_comma = true
+ [tool.coverage.html]
+ show_contexts = true
+ skip_covered = false
