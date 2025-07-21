@@ -1,4 +1,4 @@
-{% set version = "4.23.0" %}
+{% set version = "4.25.0" %}
 
 package:
   name: jsonschema
@@ -6,25 +6,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz
-  sha256: d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4
-  patches:
-    - patches/001-remove-fancy-pypi-readme.patch
+  sha256: e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f
+  
 build:
   number: 0
-  skip: True  # [py<38]
+  skip: True  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -v
   entry_points:
     - jsonschema = jsonschema.cli:main
 
 requirements:
-  build:
-    - patch                # [unix]
-    - m2-patch             # [win]
   host:
     - python
     - pip
     - hatchling
     - hatch-vcs
+    - hatch-fancy-pypi-readme
   run:
     - python
     - attrs >=22.2.0
