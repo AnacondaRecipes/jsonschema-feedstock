@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<39]
+  skip: True  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -v
   entry_points:
     - jsonschema = jsonschema.cli:main
@@ -27,7 +27,7 @@ requirements:
     - importlib_resources >=1.4.0  # [py<39]
     - jsonschema-specifications >=2023.03.6
     - pkgutil-resolve-name >=1.3.10  # [py<39]
-    - python >=3.8
+    - python
     - referencing >=0.28.4
     - rpds-py >=0.7.1
 
