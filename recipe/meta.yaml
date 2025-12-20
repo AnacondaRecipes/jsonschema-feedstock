@@ -1,16 +1,17 @@
-{% set version = "4.25.0" %}
+{% set version = "4.25.1" %}
 {% set name = "jsonschema" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85
 
 build:
-  number: 1
-  skip: True  # [py<39]
+  number: 0
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -v
   entry_points:
     - jsonschema = jsonschema.cli:main
@@ -28,6 +29,11 @@ requirements:
     - jsonschema-specifications >=2023.03.6
     - referencing >=0.28.4
     - rpds-py >=0.7.1
+  run_constrained:
+    - jsonpointer >1.13
+    - webcolors >=24.6.0
+    - rfc3986-validator >0.1.0
+    - rfc3987-syntax >=1.1.0
 
 test:
   imports:
@@ -39,9 +45,8 @@ test:
     - jsonschema --version
     - jsonschema --help
 
-
 about:
-  home:  https://github.com/python-jsonschema/jsonschema
+  home: https://github.com/python-jsonschema/jsonschema
   license: MIT
   license_family: MIT
   license_file: COPYING
